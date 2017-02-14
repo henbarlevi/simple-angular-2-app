@@ -1,0 +1,45 @@
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form (ngSubmit)="login(form)" novalidate #form="ngForm">
+                    <div class="form-wrap">
+                        <h1>Please Login</h1>
+                        <!--user name -->
+                        <div class="form-group">
+                            <label for="email" class="sr-only">user name</label>
+                            <input type="email" name="userName" id="userName" [(ngModel)]="userName" class="form-control" placeholder="user name" #userNameField="ngModel" required pattern=".+@.+">
+                            <!--user name errors-->
+                             <p *ngIf="userNameField.touched && userNameField.invalid"
+                                    class="alert alert-danger">Please enter a valid User Name</p>
+                        </div>
+                        <!--password -->                        
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Password"  #passwordField="ngModel" required>
+                            <!--password errors-->
+                            <p *ngIf="passwordField.touched && passwordField.invalid"
+                            class="alert alert-danger">Please enter a password</p>
+                        </div>
+                        <button type="submit"  id="btn-login" class="btn btn-custom btn-lg btn-block" [disabled]="form.invalid">Login</button>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+            <!-- /.col-xs-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!--footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>© hen - 2017</p>
+                <p>created by <strong><a href="https://github.com/henbarlevi" target="_blank">Hen Bar Levi</a></strong></p>
+            </div>
+        </div>
+    </div>
+</footer>
